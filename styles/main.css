@@ -1,0 +1,874 @@
+@import url(reset.css);
+@import url(JqueryUI/JqueryUI.css);
+
+/**********************************************************************************************
+ * ProcessWire Admin Control Panel - Skyscraper Theme - main.css
+ *
+ * This file provides the initial layout and styling for most admin control panel elements.
+ * See also ui.css, which provides the final styling and overrides.
+ *
+ * Copyright 2012 by Ryan Cramer
+ *
+ */
+
+/***********************************************************************************************
+ * GENERAL
+ *
+ */
+
+body {
+	background-color: #e4ebee;
+	font: 10px/20px "Helvetica Neue", Arial, sans-serif;
+	color: #2f4248;
+}
+	body.modal {
+		background-color: #fff;
+	}
+
+#masthead,
+#content,
+#footer {
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.container {
+	position: relative;
+	width: 85%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+	body.modal .container {
+		margin: 0;
+		width: 100%;
+		min-width: 300px;
+	}
+
+a {
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	color: #f10055;
+
+}
+	a:hover {
+		color: #fff;
+		background: #f10055;
+	}
+
+	a.on {
+		color: #7a002b;
+	}
+
+.WireFatalError {
+	background: #a30000;
+	color: #fff;
+	padding: 1em;
+	position: relative;
+	z-index: 9999;
+}
+
+
+
+/***********************************************************************************************
+ * MASTHEAD
+ *
+ */
+
+#masthead {
+ 	background: #2F4248;
+	height: 70px;
+	font-size: 1.1em;
+	border-bottom: 34px solid #E4EBEE;
+}
+
+#masthead:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 1px;
+	background: #000;
+	border-top: 10px solid #1B2830;
+	border-bottom: 1px solid #425561;
+}
+
+	body.modal #masthead {
+		display: none;
+	}
+
+	#logo {
+		display: none;
+		position: absolute;
+		left: 0;
+		width: 179px;
+		top: 43px;
+	}
+		#logo:hover {
+			background: none;
+		}
+
+	#topnav {
+        position: absolute;
+		top: 0;
+		left: -12px;
+	}
+
+		#topnav li {
+			padding: 0;
+			list-style: none;
+            display: inline;
+			line-height: 1em;
+		}
+
+			a.nav,
+			.nav a,
+			#sitelink {
+				font-family: "Helvetica Neue", Arial, sans-serif;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+				a.nav:hover,
+				.nav a:hover {
+					color: #fff;
+				}
+
+			#topnav a {
+				color: #a7e5f9;
+				display: block;
+				float: left;
+				margin: 0 0 0 1px;
+				padding: 32px 14px 27px 14px;
+			}
+
+			#topnav a:hover {
+				padding-top: 21px;
+				color: #fff;
+				background: #DB1174;
+				border-top: 11px solid #C50F68;
+			}
+
+	#breadcrumb {
+		position: absolute;
+		left: -11px;
+		top: 70px;
+	}
+		#breadcrumb li {
+            display: inline;
+			line-height: 1em;
+		}
+			#breadcrumb a,
+			#breadcrumb h1 {
+				position: relative;
+				display: inline-block;
+				margin: 0 -2px 0 0;
+				padding: 11px 8px 12px 24px;
+				color: #005f7d;
+				font-size: 11px;
+				font-weight: normal;
+				text-transform: none;
+				*display: inline;
+				*zoom: 1;
+			}
+			#breadcrumb a:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: -16px;
+				border-top: 17px solid transparent;
+				border-left: 15px solid #C2C2C2;
+				border-bottom: 17px solid transparent;
+				z-index: 1;
+			}
+			#breadcrumb a:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: -15px;
+				border-top: 17px solid transparent;
+				border-left: 15px solid #E4EBEE;
+				border-bottom: 17px solid transparent;
+				z-index: 1;
+			}
+			#breadcrumb a:hover {
+				color: #fff;
+				background: #DB1174;
+			}
+			#breadcrumb a:hover:after {
+				border-left-color: #DB1174;
+			}
+			#breadcrumb li:first-child a {
+				padding-left: 12px;
+			}
+			#breadcrumb h1 {
+				font-weight: normal;
+			}
+
+	#user {
+		position: absolute;
+		top: 77px;
+		right: 0;
+		color: #005F7D;
+		font-size: 12px;
+	}
+
+	#user .username {
+		font-weight: bold;
+	}
+
+	#user-actions {
+		position: absolute;
+		top: 27px;
+		right: 0;
+	}
+
+	#user-actions li {
+		float: left;
+		font-size: 12px;
+		color: white;
+	}
+
+	#user-actions li a {
+		display: block;
+		padding: 1px 15px 0 25px;
+		height: 18px;
+		color: #fff;
+	}
+
+	#user-actions li a:hover {
+		color: #DB1174;
+	}
+
+	#user-actions li a.logout {
+		background: transparent url(images/icon-logout.png) 0 2px no-repeat;
+	}
+
+	#user-actions .user-actions-search {
+		margin-right: 11px;
+	}
+
+	#ProcessPageSearchQuery {
+		width: 170px;
+		padding: 2px 5px;
+		height: 17px;
+		border: 1px solid #718594;
+		background: transparent;
+		color: #fff;
+	}
+
+	/**
+	 * The main/primary button for a listing screen, appears in the masthead
+	 *
+	 */
+	#head_button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: none;
+		z-index: 1;
+	}
+		#head_button button {
+			margin-right: 0;
+			margin-left: 10px;
+		}
+
+	#fieldgroupContext + #head_button {
+		top: 37px;
+	}
+
+#notices {
+	font-size: 1.3em;
+}
+
+/***********************************************************************************************
+ * CONTENT
+ *
+ */
+
+ #title {
+ 	margin: 7px 0 29px;
+ 	padding: 3px 0 1px 36px;
+ 	background: url(images/document.png) no-repeat;
+ 	color: #434B54;
+ 	font-size: 1.5em;
+ }
+
+#content {
+	position: relative;
+	background: #fff;
+	padding-top: 1.5em;
+	padding-bottom: 2em;
+	font-size: 1.3em;
+}
+
+	#content .container {
+		min-height: 50px;
+	}
+
+		.content img {
+			display: block;
+		}
+
+		.content .WireTabs a {
+			font-size: 0.84615em;
+		}
+		.content .nav a.label {
+			font-size: 1em;
+		}
+
+	.content p,
+	.content ul
+	.content ol,
+	.content table {
+		margin: 1em 0;
+	}
+
+	#content table th.header,
+	.content h4 {
+		font-family: "Helvetica Neue", Arial, sans-serif;
+		color: #b0ced8;
+	}
+		#content table th.headerSortUp,
+		#content table th.headerSortDown,
+		#content table th:hover {
+			color: #690033;
+		}
+
+	.content table.AdminDataList {
+		margin-top: 0;
+	}
+
+	.content h2 {
+		margin: 1em 0 1.2em;
+		font-size: 1.3em;
+		line-height: 1.2em;
+	}
+		.content h2,
+		.content h2 a {
+			color: #434B54;
+		}
+			.content h2 a {
+				text-decoration: underline;
+			}
+			.content h2 a:hover {
+				color: #fff;
+				text-decoration: none;
+			}
+
+		body.modal .content h2,
+		.container > h2,
+		.container > form > h2 {
+			margin-top: 0;
+		}
+
+		.ui-widget > h2 {
+			margin-bottom: 1.5em;
+			font-size: 1.1em;
+		}
+
+	.content h3 {
+		margin: 1em 0;
+		font-size: 1.5em;
+	}
+
+	.content h4 {
+		margin: 1em 0 0.25em 0;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 0.916666666666667em;
+	}
+	.content ul,
+	.content ol {
+	}
+
+		.content li {
+			margin: 1.3em 0;
+			display: block;
+			list-style: disc;
+		}
+
+		.content ol li {
+			display: list-item;
+			list-style-type: decimal;
+			margin-left: 1em;
+		}
+
+		/**
+		 * Actions: like the "|edit|view|new" in the PageList
+		 *
+		 */
+		.content ul.actions {
+		}
+			.content ul.actions li,
+			li.action {
+				display: inline;
+				border-left: 1px solid #ccc;
+				padding: 0 1px;
+				text-transform: lowercase;
+			}
+
+			.content ul.actions li:first-child,
+			li.action:first-child {
+				border-left: 0;
+			}
+
+			.content ul.actions li a,
+			li.action a {
+				padding: 0 5px;
+				border-bottom: none;
+			}
+
+		/**
+		 * Content navigation like when on the root page of "templates" or "access"
+		 *
+		 */
+		.content dl {
+			margin: 1em 0;
+			border-bottom: 1px dotted #ccc;
+		}
+			.content dt,
+			.content dt {
+				display: block;
+				font-weight: bold;
+				border-top: 1px dotted #ccc;
+				padding-top: 0.75em;
+			}
+			.content dt a {
+				font-size: 1em;
+				text-transform: none;
+			}
+			.content dl dd {
+				padding-bottom: 0.75em;
+			}
+
+	.content .description {
+		color: #777;
+	}
+	.content .notes {
+		font-size: 0.9166666em;
+		color: #777;
+		background: #feffd9;
+	}
+
+	.content .error {
+		color: red;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 0.9166666em;
+	}
+
+	.content .detail {
+		color: #999;
+		font-size: 0.9166666em;
+	}
+
+
+/**
+ * Tabs
+ *
+ */
+.content .WireTabs {
+	position: relative;
+	margin: 10px 0 24px 0;
+	padding-bottom: 8px;
+	left: 0;
+	height: 21px;
+	list-style: none;
+	border-bottom: 1px solid #d2dadd;
+}
+
+.content .WireTabs li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background: none;
+}
+
+.content .WireTabs li a {
+	float: left;
+	display: block;
+	margin: 0 6px 0 0;
+	padding: 8px 11px;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 12px;
+	background: #f1f5f6;
+	color: #434b54;
+	text-decoration: none;
+	text-transform: none;
+	border: 1px solid #d2dadd;
+	-webkit-border-radius: 4px 4px 0 0;
+	   -moz-border-radius: 4px 4px 0 0;
+	        border-radius: 4px 4px 0 0;
+}
+
+.content .WireTabs li a:hover,
+.content .WireTabs li a.on {
+	border-color: #2F4248;
+	color: #fff;
+	background: #2F4248;
+	background-image: -webkit-linear-gradient(bottom, #2F4248 0%, #41626D 100%);
+	background-image:    -moz-linear-gradient(bottom, #2F4248 0%, #41626D 100%);
+	background-image:     -ms-linear-gradient(bottom, #2F4248 0%, #41626D 100%);
+	background-image:      -o-linear-gradient(bottom, #2F4248 0%, #41626D 100%);
+	background-image:         linear-gradient(bottom, #2F4248 0%, #41626D 100%);
+}
+
+.content .WireTabs li a em {
+	margin: 0 1px;
+	border: none;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+.content .WireTabs li a#_ProcessPageEditView {
+	float: right;
+	margin-right: 0;
+	padding: 9px 0 11px 26px;
+	height: 17px;
+	background: transparent url(images/icon-view.png) 3px 7px no-repeat;
+	border: none;
+	color: #434b54;
+}
+
+.content .WireTabs li a#_ProcessPageEditView:hover {
+	color: #ef3a39;
+	border: none;
+}
+
+/***********************************************************************************************
+ * FOOTER
+ *
+ */
+
+#footer {
+	margin: 2em 0 2em 0;
+	font-size: 1.1em;
+	color: #85AABA;
+}
+	body.modal #footer {
+		display: none;
+	}
+	#footer p {
+		margin-top: 0;
+	}
+	#footer #userinfo {
+		display: block;
+		float: right;
+	}
+	#footer #userinfo a {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	#debug {
+		margin-top: 2em;
+	}
+		#debug .container {
+			width: 100%;
+		}
+		#debug p {
+			margin: 1em 0;
+		}
+		#debug ol {
+			margin: 1em 0;
+		}
+		#debug h4 {
+			font-weight: bold;
+		}
+
+
+
+/***********************************************************************************************
+ * MISC
+ *
+ */
+
+.align_left {
+	float: left;
+	margin: 0 1em 0.5em 0;
+}
+
+.align_right {
+	float: right;
+	margin: 0 0 0.5em 1em;
+}
+
+.align_center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.detail {
+	font-size: 0.9166em;
+	color: #999;
+}
+
+#sitelink {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #000;
+	opacity: 0.25;
+	color: #fff;
+	padding: 8px 12px 6px 12px;
+	font-size: 1.1em;
+}
+	#sitelink:hover {
+		opacity: 1.0;
+	}
+
+	body.modal #sitelink {
+		display: none;
+	}
+
+/***********************************************************************************************
+ * LOGIN
+ *
+ */
+
+body.login {
+	background: #2a373f;
+}
+
+body.login #notices {
+	margin: 100px -20px 0;
+}
+
+body.login:before {
+	content: '';
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50%;
+    background: #1b2830;
+    border-bottom: 1px solid #425561;
+}
+
+#loginBox {
+	width: 220px;
+	height: 260px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -130px;
+	margin-top: -150px;
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #232323;
+	-webkit-box-shadow: rgba(0,0,0, 0.40) 0px 0px 6px;
+	   -moz-box-shadow: rgba(0,0,0, 0.40) 0px 0px 6px;
+	        box-shadow: rgba(0,0,0, 0.40) 0px 0px 6px;
+}
+
+	#loginBox .header {
+		width: 220px;
+		height: 50px;
+		border-bottom: 1px solid #dfdfdf;
+	}
+
+	#loginBox .logo {
+		position: absolute;
+		left: 20px;
+		top: 26px;
+		width: 178px;
+		height: 22px;
+		text-indent: -99999px;
+		background: url(images/logo-login.png) no-repeat;
+	}
+
+	#loginBox #ProcessLoginForm,
+	#loginBox #InputfieldForm1 {
+		margin-top: 70px;
+	}
+
+	#loginBox #ProcessLoginForm .ui-widget-header,
+	#loginBox #InputfieldForm1 .ui-widget-header {
+		position: relative;
+		margin: 0 !important;
+		padding: 0 !important;
+		background: none;
+		border: none;
+		color: #607889;
+		font-size: 20px;
+		font-weight: normal;
+		text-align: left;
+	}
+
+	#loginBox #InputfieldForm1 .ui-widget-header {
+		letter-spacing: -1px;
+	}
+
+	#loginBox ul.Inputfields #wrap_login_name,
+	#loginBox ul.Inputfields #wrap_login_pass {
+		width: 200px !important;
+		clear: none;
+		float: left;
+		margin-top: 0;
+        cursor: default;
+	}
+
+	#loginBox ul.Inputfields #login_name,
+	#loginBox ul.Inputfields #login_pass {
+		width: 208px;
+	}
+
+	#loginBox ul.Inputfields .InputfieldSubmit {
+		clear: both;
+	}
+
+	#loginBox #ProcessLoginForm li {
+		float: none !important;
+		margin: 0;
+	}
+
+	#loginBox #ProcessLoginForm li#wrap_login_name {
+		margin: 0 0 20px 0;
+	}
+
+	#loginBox #ProcessLoginForm li#wrap_login_pass {
+		margin: 0 0 20px 0;
+	}
+
+	#loginBox #username {
+		width: 208px !important;
+	}
+
+	#loginBox .InputfieldMaxWidth {
+		margin: 0;
+		width: 208px !important;
+	}
+
+	#loginBox #ProcessLoginForm .ui-widget-content,
+	#loginBox #InputfieldForm1 .ui-widget-content {
+		margin: 10px 0 0 0;
+		padding: 0;
+		background: none;
+		border: none;
+		text-align: left;
+	}
+
+	#loginBox #InputfieldForm1 .ui-widget-content .description {
+		margin: 0 0 10px 0;
+		color: #434b54;
+		font-size: 10px;
+		line-height: 12px;
+	}
+
+	#loginBox #ProcessLoginForm .ui-icon,
+	#InputfieldForm1 .ui-icon {
+		background: none;
+	}
+
+	#loginBox #Inputfield_submit,
+	#loginBox #submit_forgot {
+		float: left;
+		margin: 0;
+	}
+
+	#loginBox > div {
+		float: right;
+		margin: -2px 0 0 0;
+	}
+
+	#loginBox > div a {
+		font-size: 11px;
+	}
+
+	#loginBox > div .ui-icon-locked,
+	#loginBox > div .ui-icon-home {
+		background: none;
+	}
+
+/***********************************************************************************************
+ * MOBILE
+ *
+ */
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+
+	#logo {
+		top: 46px;
+	}
+		#logo img {
+			width: 75%;
+		}
+
+	#topnav {
+		left: -10px;
+	}
+		#topnav a {
+			color: #a7e5f9;
+			display: block;
+			float: left;
+			margin: 0 0 0 1px;
+			padding: 12px 10px 11px 10px;
+		}
+
+		#topnav a:hover {
+			border-top: 0;
+			padding: 12px 10px 11px 10px;
+		}
+
+	#user {
+		font-size: 0;
+	}
+
+	#user .username {
+		font-size: 12px;
+	}
+
+	#user-actions {
+		top: 35px;
+	}
+
+	#masthead:before {
+		border-top: 0;
+	}
+
+	#content h2 {
+		font-size: 20px;
+	}
+
+	#masthead,
+	#content,
+	#footer {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.container {
+		width: 95%;
+	}
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+	/**
+	 * Disregard column width when at mobile size
+	 *
+	 */
+	.Inputfield {
+		clear: both !important;
+		width: 100% !important;
+		margin-left: 0 !important;
+		margin-bottom: 1em !important;
+	}
+
+	.container {
+		width: 100%;
+	}
+}

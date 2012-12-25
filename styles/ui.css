@@ -1,0 +1,336 @@
+/**********************************************************************************************
+ * ProcessWire Admin Control Panel - Skyscraper Theme - ui.css
+ *
+ * 1. jQuery UI overrides.
+ * 2. Theming of specific user interface elements (MarkupPagerNav and PageList)
+ *
+ * Copyright 2012 by Ryan Cramer
+ *
+ */
+
+
+/****************************************************************************************
+ * 1. Theme specific jQuery UI overrides and additions
+ *
+ */
+
+.ui-icon {
+	float: left;
+	margin-right: 2px;
+}
+
+label.ui-widget-header + div.ui-widget-content {
+	/* remove doubled border between header/content on ui-widgets */
+	border-top: none;
+}
+
+#notices .ui-state-highlight,
+#notices .ui-state-error {
+	padding: 0.5em;
+}
+
+	#notices .ui-state-error pre {
+		font-size: 11px;
+		margin: 1em 0;
+	}
+
+	#notices .ui-icon {
+		position: relative;
+		top: 2px;
+	}
+
+	#notices a {
+		text-decoration: underline;
+	}
+
+p span.ui-state-error {
+        padding: 0.25em 0.5em;
+}
+
+.ui-dialog .ui-dialog-content {
+	padding: 0;
+}
+
+.ui-widget-overlay {
+	background: #000;
+}
+
+.ui-button {
+	font-size: 1em;
+	margin: 0 1em 0 0;
+	padding: 4px 14px;
+	cursor: pointer;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+	p > a > .ui-button {
+		font-size: 0.923076923076923em;
+	}
+
+	a .ui-button {
+		display: block;
+	}
+
+.ui-accordion-header-icon {
+	display: none;
+}
+
+/**
+ * jQuery UI tooltips
+ *
+ */
+.ui-tooltip, .arrow:after {
+	background: black;
+	border: 2px solid white;
+}
+.ui-tooltip {
+	padding: 10px 20px;
+	color: white;
+	border-radius: 20px;
+	font: bold 12px "Helvetica Neue", Sans-Serif;
+	box-shadow: 0 0 7px black;
+}
+.arrow {
+	width: 70px;
+	height: 16px;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	margin-left: -35px;
+	bottom: -16px;
+}
+.arrow.top {
+	top: -16px;
+	bottom: auto;
+}
+.arrow.left {
+	left: 20%;
+}
+.arrow:after {
+	content: "";
+	position: absolute;
+	left: 20px;
+	top: -20px;
+	width: 25px;
+	height: 25px;
+	box-shadow: 6px 5px 9px -9px black;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	tranform: rotate(45deg);
+}
+.arrow.top:after {
+	bottom: -20px;
+	top: auto;
+}
+
+/***********************************************************************************************
+ * 2a. Theme Specific Pagination Markup
+ *
+ */
+
+.MarkupPagerNav {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin: 1em 0;
+}
+        .MarkupPagerNav li {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                display: inline;
+                padding: 6px 0;
+                background: none;
+        }
+
+                .MarkupPagerNav li a {
+                        padding: 4px 9px;
+                        margin: 0;
+                        text-decoration: none;
+                        border: none;
+                        background: #2f4248;
+                        color: #fff;
+                        font-weight: bold;
+                        font-size: 11px;
+                        text-transform: uppercase;
+			opacity: 0.8;
+                }
+
+                .MarkupPagerNav li a:hover {
+			opacity: 1.0;
+		}
+
+                .MarkupPagerNav li.MarkupPagerNavOn a {
+			opacity: 1.0;
+                        color: #fff;
+                        background: #db1174;
+                }
+
+                .MarkupPagerNav li.MarkupPagerNavSeparator {
+                        border: none;
+                }
+
+
+/****************************************************************************************
+ * 2b. Theme specific PageList overrides
+ *
+ */
+
+#PageListContainer {
+	margin-top: -6px;
+}
+	/**
+	 * Default color for page list items
+	 *
+	 */
+	.PageList a.PageListPage,
+	.PageList a.PageListPage:hover {
+		margin-right: .3em;
+		color: #434B54;
+	}
+
+	/**
+ 	 * Color when hovered
+	 *
+	 */
+	.PageList a.PageListPage:hover {
+		background: none;
+		text-decoration: underline;
+	}
+
+	/**
+ 	 * PageListPage with access icon
+	 *
+	 */
+	.PageList .PageListAccessOff a.PageListPage,
+	.PageList .PageListAccessOff a.PageListPage:hover {
+		padding-right: 12px;
+	}
+
+	.PageListItem {
+		padding: 7px 0 7px 28px;
+		line-height: 16px;
+		border-bottom: 1px solid #d2dadd;
+		background: url(images/icon-page.png) 4px 6px no-repeat;
+	}
+
+	.PageListItemOpen {
+		background: url(images/icon-page-open.png) 4px 6px no-repeat;
+	}
+
+	.PageListStatusHidden {
+		background: url(images/icon-page-hidden.png) 4px 6px no-repeat;
+	}
+
+	.PageListStatusHidden.PageListItemOpen {
+		background: url(images/icon-page-hidden-open.png) 4px 6px no-repeat;
+	}
+
+	.PageListID1 {
+		background: url(images/icon-home.png) 4px 6px no-repeat;
+	}
+
+	.PageListID2,
+	.PageListID2.PageListItemOpen {
+		background: url(images/icon-admin.png) 5px 7px no-repeat;
+	}
+
+	.PageListID7,
+	.PageListID7.PageListItemOpen {
+		background: url(images/icon-trash.png) 7px 7px no-repeat;
+	}
+
+	/**
+	 * Color of page when opened
+	 *
+	 */
+	.PageList .PageListItemOpen > a.PageListPage  {
+		color: #000;
+		background-color: #ffffdd;
+	}
+
+	/**
+	 * Give the page a lighter/alternate color when it has a hidden status
+	 *
+	 */
+	.PageList .PageListStatusHidden a.PageListPage {
+		color: #B5C2CA;
+	}
+
+
+.InputfieldForm .Inputfields,
+.InputfieldForm .Inputfields > .Inputfield {
+	margin-bottom: 1.3em;
+}
+
+.Inputfields,
+.Inputfields li,
+.Inputfields input,
+.Inputfields select,
+.Inputfields textarea {
+	font-size: 12px;
+}
+
+.Inputfields input,
+.Inputfields select,
+.Inputfields textarea {
+	padding: 5px;
+	border: 1px solid #d2dadd;
+	color: #000;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.Inputfields input:focus,
+.Inputfields select:focus,
+.Inputfields textarea:focus {
+	border: 1px solid #9ba7af;
+	-webkit-box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;
+	   -moz-box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;
+	        box-shadow: rgba(115,125,131, 0.15) 0px 0px 6px;
+	outline: none;
+}
+
+.ui-widget-header {
+	border: 1px solid #3B4C57;
+	border-radius: 5px 5px 0 0;
+	color: white;
+	font-weight: bold;
+	background: #2F4248;
+	background-image: -webkit-linear-gradient(bottom, #2F4248 0%, #41626D 100%);
+	background-image:    -moz-linear-gradient(bottom, #2F4248 0%, #41626D 100%);
+	background-image:     -ms-linear-gradient(bottom, #2F4248 0%, #41626D 100%);
+	background-image:      -o-linear-gradient(bottom, #2F4248 0%, #41626D 100%);
+	background-image:         linear-gradient(bottom, #2F4248 0%, #41626D 100%);
+}
+
+.Inputfields .ui-widget-header {
+	padding: 0.3em 0 0.3em 1em;
+}
+
+.ui-widget-header .ui-icon-triangle-1-s {
+	background-position: -64px -14px;
+}
+
+.ui-widget-header .ui-icon-arrowthick-2-n-s {
+	background-position: -128px -47px;
+}
+
+.ui-widget-content {
+	border-left: 1px solid #D2DADD;
+	border-right: 1px solid #D2DADD;
+	border-bottom: 1px solid #D2DADD;
+	background: #F1F5F6;
+	color: #434B54;
+}
+
+.ui-widget-header .ui-icon {
+	background-image: url(JqueryUI/images/ui-icons_ffffff_256x240.png);
+}
+
+.ui-state-active .ui-icon {
+	background-image: url(JqueryUI/images/ui-icons_ffffff_256x240.png)
+}
