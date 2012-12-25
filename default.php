@@ -1,9 +1,9 @@
 <?php
 
 /**
- * ProcessWire 2.x Admin Markup Template
+ * ProcessWire 2.x Elegance Theme Admin Markup Template
  *
- * Copyright 2012 by Ryan Cramer / Copyright 2012 by Nikola Vidoni / Copyright 2012 by Niek Bosch
+ * Copyright 2012 by Ryan Cramer / Copyright 2012 by Niek Bosch
  *
  *
  */
