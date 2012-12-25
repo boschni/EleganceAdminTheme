@@ -157,7 +157,7 @@ a {
 			line-height: 1em;
 		}
 			#breadcrumb a,
-			#breadcrumb h1 {
+			#breadcrumb span {
 				position: relative;
 				display: inline-block;
 				margin: 0 -2px 0 0;
@@ -198,9 +198,6 @@ a {
 			}
 			#breadcrumb li:first-child a {
 				padding-left: 12px;
-			}
-			#breadcrumb h1 {
-				font-weight: normal;
 			}
 
 	#user {

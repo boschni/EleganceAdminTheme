@@ -135,7 +135,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 						echo "\n\t\t\t\t<li><a href='{$breadcrumb->url}'>{$title}</a></li>";
 					}
 
-					echo "\n\t\t\t\t<li><h1>" . __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")), __FILE__) . "</h1></li>";
+					echo "\n\t\t\t\t<li><span>" . __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")), __FILE__) . "</span></li>";
 				?>
 			</ul>
 
