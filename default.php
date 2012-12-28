@@ -12,11 +12,11 @@ $searchForm = $user->hasPermission('page-edit') ? $modules->get('ProcessPageSear
 $bodyClass = $input->get->modal ? 'modal' : '';
 if(!isset($content)) $content = '';
 
-$config->styles->prepend($config->urls->adminTemplates . "styles/main.css?v=2");
-$config->styles->append($config->urls->adminTemplates . "styles/inputfields.css");
-$config->styles->append($config->urls->adminTemplates . "styles/ui.css?v=2");
-$config->scripts->append($config->urls->adminTemplates . "scripts/inputfields.js");
-$config->scripts->append($config->urls->adminTemplates . "scripts/main.js?v=2");
+$config->styles->prepend($config->urls->adminTemplates . 'styles/main.css?v=2');
+$config->styles->append($config->urls->adminTemplates . 'styles/inputfields.css');
+$config->styles->append($config->urls->adminTemplates . 'styles/ui.css?v=2');
+$config->scripts->append($config->urls->adminTemplates . 'scripts/inputfields.js');
+$config->scripts->append($config->urls->adminTemplates . 'scripts/main.js?v=2');
 
 $browserTitle = wire('processBrowserTitle');
 if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FILE__) . ' &bull; ProcessWire';
@@ -98,7 +98,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 
 		<?php echo $content?>
 
-		<?php if(count($notices)) include($config->paths->adminTemplates . "notices.inc"); ?>
+		<?php if(count($notices)) include($config->paths->adminTemplates . 'notices.inc'); ?>
 
 	</div>
 
@@ -125,7 +125,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 		<div class="container">
 
 			<ul id="topnav" class="nav">
-				<?php include($config->paths->adminTemplates . "topnav.inc"); ?>
+				<?php include($config->paths->adminTemplates . 'topnav.inc'); ?>
 			</ul>
 
 			<?php if(!$user->isGuest()): ?>
@@ -139,11 +139,11 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 				</li>
 			</ul>
 
-			<div id="user"><?php echo __("You are logged in as"); ?> <a class="username" href="<?php echo $config->urls->admin; ?>profile/"><?php echo $user->name?></a></div>
+			<div id="user"><?php echo __('You are logged in as'); ?> <a class="username" href="<?php echo $config->urls->admin; ?>profile/"><?php echo $user->name?></a></div>
 
 			<ul id="breadcrumb" class="nav">
 				<?php
-					echo "\n\t\t\t\t<li><a href='{$config->urls->admin}'>Admin</a></li>";
+					echo "\n\t\t\t\t<li><a href='{$config->urls->admin}'>" . __('Admin') . "</a></li>";
 
 					foreach ($this->fuel('breadcrumbs') as $breadcrumb) {
 
@@ -155,7 +155,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 						echo "\n\t\t\t\t<li><a href='{$breadcrumb->url}'>{$title}</a></li>";
 					}
 
-					echo "\n\t\t\t\t<li><span>" . __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")), __FILE__) . "</span></li>";
+					echo "\n\t\t\t\t<li><span>" . __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get('title|name')), __FILE__) . "</span></li>";
 				?>
 			</ul>
 
@@ -164,12 +164,12 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 		</div>
 	</div>
 
-	<?php if(count($notices)) include($config->paths->adminTemplates . "notices.inc"); ?>
+	<?php if(count($notices)) include($config->paths->adminTemplates . 'notices.inc'); ?>
 
 	<div id="content" class="content fouc_fix">
 		<div class="container">
 
-			<h1 id="title"><?php echo __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get("title|name")), __FILE__); ?></h1>
+			<h1 id="title"><?php echo __(strip_tags($this->fuel->processHeadline ? $this->fuel->processHeadline : $page->get('title|name')), __FILE__); ?></h1>
 
 			<?php if(trim($page->summary)) echo "<h2>{$page->summary}</h2>"; ?>
 
@@ -183,8 +183,8 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 
 	<div id="footer" class="footer">
 		<div class="container">
-			<p>ProcessWire <?php echo $config->version . ' <!--v' . $config->systemVersion; ?>--> &copy; <?php echo date("Y"); ?> Ryan Cramer</p>
-			<?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . "debug.inc"); ?>
+			<p>ProcessWire <?php echo $config->version . ' <!--v' . $config->systemVersion; ?>--> &copy; <?php echo date('Y'); ?> Ryan Cramer</p>
+			<?php if($config->debug && $this->user->isSuperuser()) include($config->paths->adminTemplates . 'debug.inc'); ?>
 		</div>
 	</div>
 
