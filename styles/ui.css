@@ -259,6 +259,14 @@ p span.ui-state-error {
 		color: #B5C2CA;
 	}
 
+	/**
+	 * Add more space between move text and cancel button
+	 *
+	 */
+	.PageList .PageListMoveNote a {
+		margin-left: .4em;
+	}
+
 
 .InputfieldForm .Inputfields,
 .InputfieldForm .Inputfields > .Inputfield {
