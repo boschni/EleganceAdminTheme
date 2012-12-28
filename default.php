@@ -67,7 +67,6 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 
 	<?php foreach($config->styles->unique() as $file) echo "\n\t<link type='text/css' href='$file' rel='stylesheet' />"; ?>
 
-
 	<!--[if IE]>
 	<link rel="stylesheet" type="text/css" href="<?php echo $config->urls->adminTemplates; ?>styles/ie.css" />
 	<![endif]-->
@@ -78,6 +77,12 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 
 	<?php foreach($config->scripts->unique() as $file) echo "\n\t<script type='text/javascript' src='$file'></script>"; ?>
 
+	<script type="text/javascript">
+		// Overwrite TinyMCE skin setting
+		if (typeof InputfieldTinyMCEConfigDefaults != 'undefined') {
+			InputfieldTinyMCEConfigDefaults.skin = 'default';
+		}
+	</script>
 </head>
 
 <?php if($user->isGuest()): ?>
