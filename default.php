@@ -80,7 +80,8 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 	<script type="text/javascript">
 		// Overwrite TinyMCE skin setting
 		if (typeof InputfieldTinyMCEConfigDefaults != 'undefined') {
-			InputfieldTinyMCEConfigDefaults.skin = 'default';
+			InputfieldTinyMCEConfigDefaults.skin = 'o2k7';
+			InputfieldTinyMCEConfigDefaults.skin_variant = 'silver';
 		}
 	</script>
 </head>
