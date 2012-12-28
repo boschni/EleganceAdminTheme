@@ -336,7 +336,7 @@ a {
 
 	.content h2 {
 		margin: 1em 0 1.2em;
-		font-size: 1.3em;
+		font-size: 16px;
 		line-height: 1.2em;
 	}
 		.content h2,
@@ -358,8 +358,7 @@ a {
 		}
 
 		.ui-widget > h2 {
-			margin-bottom: 1.5em;
-			font-size: 1.1em;
+			margin-bottom: 1.625em;
 		}
 
 	.content h3 {
