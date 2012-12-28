@@ -646,7 +646,7 @@ body.login:before {
 
 #loginBox {
 	width: 220px;
-	height: 260px;
+	height: 250px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -689,7 +689,7 @@ body.login:before {
 		background: none;
 		border: none;
 		color: #607889;
-		font-size: 20px;
+		font-size: 16px;
 		font-weight: normal;
 		text-align: left;
 	}
@@ -700,7 +700,7 @@ body.login:before {
 
 	#loginBox ul.Inputfields #wrap_login_name,
 	#loginBox ul.Inputfields #wrap_login_pass {
-		width: 200px !important;
+		width: 220px !important;
 		clear: none;
 		float: left;
 		margin-top: 0;
@@ -730,17 +730,17 @@ body.login:before {
 	}
 
 	#loginBox #username {
-		width: 208px !important;
+		width: 220px !important;
 	}
 
 	#loginBox .InputfieldMaxWidth {
 		margin: 0;
-		width: 208px !important;
+		width: 220px !important;
 	}
 
 	#loginBox #ProcessLoginForm .ui-widget-content,
 	#loginBox #InputfieldForm1 .ui-widget-content {
-		margin: 10px 0 0 0;
+		margin: 8px 0 0 0;
 		padding: 0;
 		background: none;
 		border: none;
@@ -767,7 +767,7 @@ body.login:before {
 
 	#loginBox > div {
 		float: right;
-		margin: -2px 0 0 0;
+		margin: 3px 0 0 0;
 	}
 
 	#loginBox > div a {
