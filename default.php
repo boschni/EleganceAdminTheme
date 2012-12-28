@@ -95,6 +95,20 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 		<?php if(count($notices)) include($config->paths->adminTemplates . "notices.inc"); ?>
 
 	</div>
+
+	<script type="text/javascript">
+
+		var nameInput = $('#login_name'),
+			passInput = $('#login_pass');
+
+		if ( ! nameInput.val()) {
+			nameInput.focus();
+		} else {
+			passInput.focus();
+		}
+
+	</script>
+
 </body>
 
 <?php else: ?>
