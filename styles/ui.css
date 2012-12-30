@@ -189,6 +189,7 @@ p span.ui-state-error {
 	.PageList a.PageListPage:hover {
 		margin-right: .3em;
 		color: #434B54;
+		font-size: 12px;
 	}
 
 	/**
