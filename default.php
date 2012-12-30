@@ -31,6 +31,7 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
  * __("Modules");
  * __("Access");
  * __("Admin");
+ * __("Site");
  *
  */
 
@@ -139,11 +140,11 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 				</li>
 			</ul>
 
-			<div id="user"><?php echo __('You are logged in as'); ?> <a class="username" href="<?php echo $config->urls->admin; ?>profile/"><?php echo $user->name?></a></div>
+			<div id="user"><?php echo __('You are logged in as', __FILE__); ?> <a class="username" href="<?php echo $config->urls->admin; ?>profile/"><?php echo $user->name?></a></div>
 
 			<ul id="breadcrumb" class="nav">
 				<?php
-					echo "\n\t\t\t\t<li><a href='{$config->urls->admin}'>" . __('Admin') . "</a></li>";
+					echo "\n\t\t\t\t<li><a href='{$config->urls->admin}'>" . __('Admin', __FILE__) . "</a></li>";
 
 					foreach ($this->fuel('breadcrumbs') as $breadcrumb) {
 

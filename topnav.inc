@@ -24,4 +24,4 @@ foreach($pages->get($wire->config->adminRootPageID)->children("check_access=0") 
 		echo "\n\t\t\t\t<li><a href='{$p->url}'$class>$title</a></li>";
 	}
 }
-echo "\n\t\t\t\t<li><a href='{$config->urls->root}' target='_blank'>" . __("Site", __FILE__) . "</a></li>";
+echo "\n\t\t\t\t<li><a href='{$config->urls->root}' target='_blank'>" . __('Site', dirname(__FILE__) . '/default.php') . "</a></li>";
