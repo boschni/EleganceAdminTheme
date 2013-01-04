@@ -135,8 +135,11 @@ if(!$browserTitle) $browserTitle = __(strip_tags($page->get('title|name')), __FI
 				<li class="user-actions-search">
 					<?php echo tabIndent($searchForm, 3); ?>
 				</li>
+				<li class="user-actions-site">
+					<a class="site" href="<?php echo $config->urls->root; ?>" target="_blank"><?php echo __('Site', __FILE__); ?></a>
+				</li>
 				<li class="user-actions-logout">
-					<a class="logout" href='<?php echo $config->urls->admin; ?>login/logout/'><?php echo __('logout', __FILE__); ?></a>
+					<a class="logout" href="<?php echo $config->urls->admin; ?>login/logout/"><?php echo __('logout', __FILE__); ?></a>
 				</li>
 			</ul>
 
